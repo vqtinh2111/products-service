@@ -1,0 +1,20 @@
+micronaut:
+  application:
+    name: products
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:54321/postgres
+    driverClassName: org.postgresql.Driver
+    username: postgres
+    password: tinhvq
+    schema-generate: CREATE_DROP
+    dialect: POSTGRES
+jpa:
+  default:
+    entity-scan:
+      packages: 'tdt.micronaut.entity'
+jpa.default.properties.hibernate.hbm2ddl.auto: update
+elasticsearch.httpHosts: "http://localhost:9200,http://127.0.0.2:9200"
+graphql:
+  graphiql:
+      enabled: true

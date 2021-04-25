@@ -1,0 +1,24 @@
+type Query {
+    getProductById(id: ID!) : ProductOutput
+    paginateProduct(page: Int, size: Int) : ProductListOutput
+    searchProduct(page: Int, size: Int, searchText: String!) : ProductListOutput
+}
+
+type Mutation {
+    createProduct(name: String!, description: String): ProductOutput
+    updateProduct(id: ID!, name: String, description: String) : Boolean!
+    deleteProduct(id: ID!) : Boolean!
+}
+
+type ProductOutput {
+    id: ID!
+    name: String!
+    description: String
+}
+
+type ProductListOutput {
+    page: Int
+    size : Int
+    total: Int
+    records: [ProductOutput!]!
+}
